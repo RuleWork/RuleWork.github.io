@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>MyBlog</title>
+  
+  <subtitle>个人博客</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-02-14T03:34:34.580Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>统行</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>往后余生</title>
+    <link href="http://yoursite.com/2019/02/14/%E5%BE%80%E5%90%8E%E4%BD%99%E7%94%9F/"/>
+    <id>http://yoursite.com/2019/02/14/往后余生/</id>
+    <published>2019-02-14T03:13:59.000Z</published>
+    <updated>2019-02-14T03:34:34.580Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;往后的余生，我只要你&quot;&gt;&lt;a href=&quot;#往后的余生，我只要你&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="情人节" scheme="http://yoursite.com/tags/%E6%83%85%E4%BA%BA%E8%8A%82/"/>
+    
+  </entry>
+  
+</feed>
