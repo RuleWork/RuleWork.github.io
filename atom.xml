@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>MyBlog</title>
   
-  <subtitle>Recording Technology and Life</subtitle>
+  <subtitle>Recording programm life</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-28T10:48:21.854Z</updated>
+  <updated>2019-02-28T10:54:04.447Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2019/02/28/fen-er-zhi-zhi-yu-kuai-su-pai-xu/"/>
     <id>http://yoursite.com/2019/02/28/fen-er-zhi-zhi-yu-kuai-su-pai-xu/</id>
     <published>2019-02-28T10:47:43.000Z</published>
-    <updated>2019-02-28T10:48:21.854Z</updated>
+    <updated>2019-02-28T10:54:04.447Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;p&gt;##一.分而治之&lt;br&gt;分而治之（divide and
+          &lt;h2 id=&quot;一-分而治之&quot;&gt;&lt;a href=&quot;#一-分而治之&quot; class=&quot;headerlink&quot; title=&quot;一.分而治之&quot;&gt;&lt;/a&gt;一.分而治之&lt;/h2&gt;&lt;p&gt;分而治之（divide and
         
       
     
