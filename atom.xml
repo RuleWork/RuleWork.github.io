@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>MyBlog</title>
   
-  <subtitle>blog about a love story</subtitle>
+  <subtitle>Recording Technology and Life</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-14T06:02:14.871Z</updated>
+  <updated>2019-02-28T10:48:21.854Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>往后余生</title>
-    <link href="http://yoursite.com/2019/02/14/wang-hou-yu-sheng/"/>
-    <id>http://yoursite.com/2019/02/14/wang-hou-yu-sheng/</id>
-    <published>2019-02-14T03:13:59.000Z</published>
-    <updated>2019-02-14T06:02:14.871Z</updated>
+    <title>深入理解分而治之与快速排序</title>
+    <link href="http://yoursite.com/2019/02/28/fen-er-zhi-zhi-yu-kuai-su-pai-xu/"/>
+    <id>http://yoursite.com/2019/02/28/fen-er-zhi-zhi-yu-kuai-su-pai-xu/</id>
+    <published>2019-02-28T10:47:43.000Z</published>
+    <updated>2019-02-28T10:48:21.854Z</updated>
     
     <summary type="html">
     
@@ -29,14 +29,14 @@
       
         
         
-          &lt;h3 id=&quot;往后的余生，我只要你&quot;&gt;&lt;a href=&quot;#往后的余生，我只要你&quot; class=&quot;headerlink&quot;
+          &lt;p&gt;##一.分而治之&lt;br&gt;分而治之（divide and
         
       
     
     </summary>
     
     
-      <category term="情人节" scheme="http://yoursite.com/tags/%E6%83%85%E4%BA%BA%E8%8A%82/"/>
+      <category term="算法，数据结构" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95%EF%BC%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
