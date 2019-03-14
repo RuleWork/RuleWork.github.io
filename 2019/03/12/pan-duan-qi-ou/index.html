@@ -4,9 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="一文讲透从输入URL到浏览器显示页面发生了什么, Record">
-    <meta name="description" content="这是一个老生常谈的话题，今天我们再来详细想分析一波。
-1.浏览器对用户输入的网址(域名)做初步的格式化检查，域名是一个逻辑概念2.浏览器对用户输入的网址默认进行https补全。3.浏览器将网址通过DNS协议解析成具体的IP地址PS：DNS(">
+    <meta name="keywords" content="判断奇偶, Record">
+    <meta name="description" content="
+最近在知乎上看到一位大佬分享了一道面试题，题目很简单，但对基础考察的淋漓尽致，很有启发意义，分享给大家。
+
+题目：判断一个数的是奇数。
+相当一部分人会这样写：
+public boolean Odd(int i){
+    if(i%2 =">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>一文讲透从输入URL到浏览器显示页面发生了什么 | MyBlog</title>
+    <title>判断奇偶 | MyBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -281,13 +286,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        一文讲透从输入URL到浏览器显示页面发生了什么
+                        判断奇偶
                     </div>
                 </div>
             </div>
@@ -400,8 +405,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/算法，数据结构/" target="_blank">
-                                <span class="chip bg-color">算法，数据结构</span>
+                            <a href="/tags/Java基础/" target="_blank">
+                                <span class="chip bg-color">Java基础</span>
                             </a>
                         
                     </div>
@@ -415,21 +420,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-07
+                    2019-03-12
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.7k
+                        356
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        6 分
+                        1 分
                     </div>
                     
                 
@@ -445,33 +450,62 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>这是一个老生常谈的话题，今天我们再来详细想分析一波。</p>
-<h6 id="1-浏览器对用户输入的网址-域名-做初步的格式化检查，域名是一个逻辑概念"><a href="#1-浏览器对用户输入的网址-域名-做初步的格式化检查，域名是一个逻辑概念" class="headerlink" title="1.浏览器对用户输入的网址(域名)做初步的格式化检查，域名是一个逻辑概念"></a>1.浏览器对用户输入的网址(域名)做初步的格式化检查，域名是一个逻辑概念</h6><h6 id="2-浏览器对用户输入的网址默认进行https补全。"><a href="#2-浏览器对用户输入的网址默认进行https补全。" class="headerlink" title="2.浏览器对用户输入的网址默认进行https补全。"></a>2.浏览器对用户输入的网址默认进行https补全。</h6><h6 id="3-浏览器将网址通过DNS协议解析成具体的IP地址"><a href="#3-浏览器将网址通过DNS协议解析成具体的IP地址" class="headerlink" title="3.浏览器将网址通过DNS协议解析成具体的IP地址"></a>3.浏览器将网址通过DNS协议解析成具体的IP地址</h6><p>PS：DNS(Domain Name System)，域名系统，是一个联机分布式数据库系统，并采用客户服务器方式，DNS大多数名字都在本地解析，少量解析需要在网络上，因此它的效率很高。IP地址的解析是由许多的域名服务器程序共同完成的。</p>
-<p>1).查询浏览器的DNS缓存，可以使用 <a href="chrome://net-internals/#dns" target="_blank" rel="noopener">chrome://net-internals/#dns</a> 来查看，如果没有下一步</p>
-<p>2).查询操作系统的DNS缓存,以Windows系统为例，可以在命令行下使用 ipconfig /displaydns 来进行查看，如果没有下一步</p>
-<p>3).读取hosts文件（位于C:\Windows\System32\drivers\etc），查看有没有该域名对应的IP地址，如果没有下一步</p>
-<p>4).联网向浏览器发起一个DNS的系统调用，向本地配置的ISP(互联网服务提供者)发起域名解析请求，通过的是UDP协议向DNS的53端口发起请求，这个请求是<strong>递归的请求</strong>，也就是的DNS服务器必须得提供给我们该域名的IP地址，ISP的DNS服务器首先查找自身的缓存，找到对应的条目，且没有过期，则解析成功。如果没有找到对应的条目，则有ISP的DNS代我们的浏览器发起<strong>迭代DNS解析请求</strong>，它首先是会找根域的DNS的IP地址，这个DNS服务器都内置13台根域的DNS的IP地址(这里的13台根域名服务器其实并不真是13台，而是13个ip地址，采用任播技术，我们可以在全球设立这些ip的镜像站点，你访问到的ip并不是唯一的那台主机)，找到根域的DNS地址后，就会向其发起请求，例如<a href="http://www.cnblogs.com这个域名(www是三级域名，cnblog是二级，com是顶级)，根域发现这是一个顶级域com域的一个域名，于是就告诉ISP的DNS我不知道这个域名的IP地址，但是我知道com域的IP地址，你去找它，于是ISP的DNS就得到了com域的IP地址，又向com域的IP地址发起了请求，请问www.cnblogs.com这个域名的IP地址是多少?com域这台服务器告诉运营商的DNS我不知道www.cnblogs.com这个域名的IP地址，但是我知道www.cnblogs.com这个域的DNS地址，你去找它去，于是ISP的DNS又向www.cnblogs.com这个域名的DNS地址（这个一般就是由域名注册商提供的，像万网，新网等）发起请求（请问www.cnblogs.com这个域名的IP地址是多少？），这个时候cnblogs.com域的DNS服务器一查，果真在我这里，于是就把找到的结果发送给ISP的DNS服务器，这个时候运营商的DNS服务器就拿到了www.cnblogs.com这个域名对应的IP地址，并返回给Windows系统内核，内核又把结果返回给浏览器，终于浏览器拿到了www.cnblogs.com对应的IP地址，该进行一步的动作了。" target="_blank" rel="noopener">www.cnblogs.com这个域名(www是三级域名，cnblog是二级，com是顶级)，根域发现这是一个顶级域com域的一个域名，于是就告诉ISP的DNS我不知道这个域名的IP地址，但是我知道com域的IP地址，你去找它，于是ISP的DNS就得到了com域的IP地址，又向com域的IP地址发起了请求，请问www.cnblogs.com这个域名的IP地址是多少?com域这台服务器告诉运营商的DNS我不知道www.cnblogs.com这个域名的IP地址，但是我知道www.cnblogs.com这个域的DNS地址，你去找它去，于是ISP的DNS又向www.cnblogs.com这个域名的DNS地址（这个一般就是由域名注册商提供的，像万网，新网等）发起请求（请问www.cnblogs.com这个域名的IP地址是多少？），这个时候cnblogs.com域的DNS服务器一查，果真在我这里，于是就把找到的结果发送给ISP的DNS服务器，这个时候运营商的DNS服务器就拿到了www.cnblogs.com这个域名对应的IP地址，并返回给Windows系统内核，内核又把结果返回给浏览器，终于浏览器拿到了www.cnblogs.com对应的IP地址，该进行一步的动作了。</a></p>
-<h6 id=""><a href="#" class="headerlink" title=""></a><img src="C:\Users\acer\Desktop\DNS解析.png" alt="DNS解析"></h6><h6 id="4-发起TCP的3次握手"><a href="#4-发起TCP的3次握手" class="headerlink" title="4.发起TCP的3次握手"></a>4.发起TCP的3次握手</h6><p>大概的过程就是：</p>
-<ul>
-<li>第一次握手： A给B打电话说，你可以听到我说话吗？</li>
-<li>第二次握手： B收到了A的信息，然后对A说： 我可以听得到你说话啊，你能听得到我说话吗？  </li>
-<li>第三次握手： A收到了B的信息，然后说可以的，我要给你发信息啦！</li>
-</ul>
-<p>　　<strong>在三次握手之后，A和B都能确定这么一件事： 我说的话，你能听到； 你说的话，我也能听到。</strong> <strong>这样，就可以开始正常通信了。</strong></p>
-<h6 id="5-发送Http请求"><a href="#5-发送Http请求" class="headerlink" title="5.发送Http请求"></a>5.发送Http请求</h6><p>Http请求报文携带各种头部信息，大致分为三个部分：请求行、请求头、请求体。</p>
-<p>请求行一般包括：服务器协议版本，状态码(2XX，表示处理成功；  4XX，表示客户端的错误；  5XX，表示服务器内部出错)</p>
-<p>请求头一般包括：此次响应的时间、此次响应返回的文件长度、文件类型等等</p>
-<p>请求体一般包括：服务器返回给客户端的文件、数据等（当请求时POST的时候才会有请求体）</p>
-<h6 id="6-服务器处理后响应给客户端HTML文件"><a href="#6-服务器处理后响应给客户端HTML文件" class="headerlink" title="6.服务器处理后响应给客户端HTML文件"></a>6.服务器处理后响应给客户端HTML文件</h6><h6 id="7-浏览器解析html代码。"><a href="#7-浏览器解析html代码。" class="headerlink" title="7.浏览器解析html代码。"></a>7.浏览器解析html代码。</h6><p>浏览器拿到html文件后，就开始解析其中的html代码，遇到js/css/image等静态资源时，就向服务器端去请求下载（会使用多线程下载，每个浏览器的线程数不一样），这个时候就用上keep-alive特性了，建立一次HTTP连接，可以请求多个资源(HTTP的版本要为1.1)，下载资源的顺序就是按照代码里的顺序，但是由于每个资源大小不一样，而浏览器又多线程请求请求资源，所以显示的顺序并不一定是代码里面的顺序。</p>
-<p>如果浏览器在请求静态资源时（在未过期的情况下），向服务器端发起一个http请求（询问自从上一次修改时间到现在有没有对资源进行修改），如果服务器端返回304状态码（告诉浏览器服务器端没有修改），那么浏览器会直接读取本地的该资源的缓存文件。</p>
-<h6 id="8-浏览器渲染页面"><a href="#8-浏览器渲染页面" class="headerlink" title="8.浏览器渲染页面"></a>8.浏览器渲染页面</h6><p>渲染的过程大致分为：</p>
-<ol>
-<li><strong>转换：</strong> 浏览器从磁盘或网络读取 HTML 的原始字节，并根据文件的指定编码（如 UTF-8）将它们转换成各个字符。</li>
-<li><strong>Tokenizing</strong>： 浏览器将字符串转换成 <a href="http://www.w3.org/TR/html5/" target="_blank" rel="noopener">W3C HTML5 标准</a>规定的各种tokens，例如，“<html>”、“<body>”，以及其他尖括号内的字符串。每个token都具有特殊含义和一组规则。</body></html></li>
-<li><strong>词法分析：</strong> 发出的标记转换成定义其属性和规则的“对象”。</li>
-<li><strong>DOM</strong> <strong>构建：</strong> 最后，由于 HTML 标记定义不同标记之间的关系（一些标记包含在其他标记内），创建的对象链接在一个树数据结构内，此结构也会捕获原始标记中定义的父项-子项关系：<em>HTML</em> 对象是 <em>body</em> 对象的父项，b<em>ody</em>是<em>paragraph</em>对象的父项，依此类推。</li>
-</ol>
-<p><strong>整个流程最终输出是页面的文档对象模型 (DOM)，浏览器对页面进行的所有进一步处理都会用到它。</strong></p>
+                <blockquote>
+<p>最近在知乎上看到一位大佬分享了一道面试题，题目很简单，但对基础考察的淋漓尽致，很有启发意义，分享给大家。</p>
+</blockquote>
+<p><strong>题目：判断一个数的是奇数。</strong></p>
+<p>相当一部分人会这样写：</p>
+<pre class=" language-Java"><code class="language-Java">public boolean Odd(int i){
+    if(i%2 == 1){
+        return true;
+    }else{
+        return false;
+    }
+}
+</code></pre>
+<p>有没有更简单的写法呢？</p>
+<p>我们可以优化一下，<strong>将判断后的结果直接做为返回值</strong></p>
+<pre class=" language-Java"><code class="language-Java">public boolean isOdd(int i){
+    return i%2 == 1;
+}
+</code></pre>
+<p>但是那这会导致一个什么问题呢？</p>
+<p>很简单，如果我们传入一个负奇数，显然就会判断错误，因为奇数也分正负。</p>
+<p>例如：传入一个-1，是奇数，但会返回false.</p>
+<p>如何解决呢？也许可以这样解决。</p>
+<pre class=" language-Java"><code class="language-Java">public boolean isOdd(int i){
+    return i%2 == 1 || i%2 == -1;
+}
+</code></pre>
+<p>我们还可以优化一下：</p>
+<pre class=" language-Java"><code class="language-Java">public boolean isOdd(int i){
+    return i%2 != 0;
+}
+</code></pre>
+<p>到了这里，已经满足题目的要求了。</p>
+<p>接下来我们再来尝试一下能否继续优化？</p>
+<p>我们会发现奇数和偶数转换成二进制的区别是奇数最后一位是1，偶数是0。</p>
+<p>继而会想到用位运算来代替取模运算来进行优化，<strong>因为在计算机的底层移位运算的效率是远远大于取模运算的。</strong></p>
+<p>有的人可能瞬间想到了这样写：</p>
+<pre class=" language-Java"><code class="language-Java">public boolean isOdd(int i){
+    return 1 >> 1 << 1 !=i;
+}
+</code></pre>
+<p>但这并不是重点，应该想到的是按位与运算：</p>
+<pre class=" language-Java"><code class="language-Java">public boolean isOdd(int i){
+    return i & 1 == 1;
+}
+</code></pre>
+<p>然而这样写编译都会出错，因为==运算的优先级大于&amp;运算。所以：</p>
+<pre class=" language-Java"><code class="language-Java">public boolean isOdd(int i){
+    return (i & 1) == 1;
+}
+</code></pre>
+<p>例如：传入5,5的二进制是101,101&amp;001,结果是001。这里显然进行的也是位运算，因此效率应该比模运算高。</p>
+<p>这总大圆满了吧，绝杀来了。</p>
+<p><strong>然而经过测试发现实际的运行效率并没有提高</strong>，这又是为什么呢？</p>
+<p>答案是：编译器会将对2的指数取模操作，优化成位运算操作，也就是说底层已经自动实现了优化。</p>
+<p>如果我们对class文件反汇编，就会发现return i%2 != 0;这一句用的是iand位移指令。</p>
 
             </div>
             <hr>
@@ -612,7 +646,7 @@
                     </span>
                     <a href="http://yoursite.com" class="b-link-green">MyBlog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/07/yi-wen-jiang-tou-cong-shu-ru-url-dao-liu-lan-qi-xian-shi-ye-mian-fa-sheng-liao-shi-me/" class="b-link-green">一文讲透从输入URL到浏览器显示页面发生了什么</a>
+                    <a href="/2019/03/12/pan-duan-qi-ou/" class="b-link-green">判断奇偶</a>
                 </p>
             </div>
         </div>
@@ -634,7 +668,7 @@
         repo: 'RuleWork.github.io',
         owner: 'RuleWork',
         admin: ["RuleWork"],
-        id: '2019-03-07T16-24-21',
+        id: '2019-03-12T11-38-29',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -659,26 +693,21 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/03/12/pan-duan-qi-ou/">
+                <a href="/2019/03/13/yi-wen-jiang-tou-hashcode-he-equals-fang-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="判断奇偶">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="一文讲透hashCode和equals方法">
                         
-                        <span class="card-title">判断奇偶</span>
+                        <span class="card-title">一文讲透hashCode和equals方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">
-最近在知乎上看到一位大佬分享了一道面试题，题目很简单，但对基础考察的淋漓尽致，很有启发意义，分享给大家。
-
-题目：判断一个数的是奇数。
-相当一部分人会这样写：
-public boolean Odd(int i){
-    if(i%2 =</div>
+                    <div class="summary">本文主要回答一下几个问题，意在消除所有关于HashCode和equals方法的模糊地带，彻底掌握这个知识点，虽然HashCode和equals是Java中的基础概念但是包含的内容却一点也不少，所谓基础不牢，地动山摇，所以大家还是重视。
+0.</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-12
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-13
                         </span>
                         <span class="publish-author">
                             
@@ -691,8 +720,8 @@ public boolean Odd(int i){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java基础/" target="_blank">
-                        <span class="chip bg-color">Java基础</span>
+                    <a href="/tags/算法，数据结构/" target="_blank">
+                        <span class="chip bg-color">算法，数据结构</span>
                     </a>
                     
                 </div>
@@ -706,21 +735,21 @@ public boolean Odd(int i){
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/02/28/fen-er-zhi-zhi-yu-kuai-su-pai-xu/">
+                <a href="/2019/03/07/yi-wen-jiang-tou-cong-shu-ru-url-dao-liu-lan-qi-xian-shi-ye-mian-fa-sheng-liao-shi-me/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="深入理解分而治之与快速排序">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="一文讲透从输入URL到浏览器显示页面发生了什么">
                         
-                        <span class="card-title">深入理解分而治之与快速排序</span>
+                        <span class="card-title">一文讲透从输入URL到浏览器显示页面发生了什么</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">一.分而治之分而治之（divide and conquer,D&amp;C）是一种解决问题的重要的策略。它不仅是一种递归式的解决方法，更是一种分析问题的思维模式，尤其在程序设计中反映着一个人的算法内功，其重要性不言而喻。
-下面我们先来假设这</div>
+                    <div class="summary">这是一个老生常谈的话题，今天我们再来详细想分析一波。
+1.浏览器对用户输入的网址(域名)做初步的格式化检查，域名是一个逻辑概念2.浏览器对用户输入的网址默认进行https补全。3.浏览器将网址通过DNS协议解析成具体的IP地址PS：DNS(</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-28
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-07
                             </span>
                         <span class="publish-author">
                             

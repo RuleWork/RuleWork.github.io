@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-07T08:35:06.689Z</updated>
+  <updated>2019-03-14T15:40:23.607Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="http://yoursite.com/2019/03/07/yi-wen-jiang-tou-cong-shu-ru-url-dao-liu-lan-qi-xian-shi-ye-mian-fa-sheng-liao-shi-me/"/>
-    <id>http://yoursite.com/2019/03/07/yi-wen-jiang-tou-cong-shu-ru-url-dao-liu-lan-qi-xian-shi-ye-mian-fa-sheng-liao-shi-me/</id>
-    <published>2019-03-07T08:24:21.251Z</published>
-    <updated>2019-03-07T08:35:06.689Z</updated>
+    <title>一文讲透抽象类和接口</title>
+    <link href="http://yoursite.com/2019/03/14/yi-wen-jiang-tou-chou-xiang-lei-he-jie-kou/"/>
+    <id>http://yoursite.com/2019/03/14/yi-wen-jiang-tou-chou-xiang-lei-he-jie-kou/</id>
+    <published>2019-03-14T15:36:14.000Z</published>
+    <updated>2019-03-14T15:40:23.607Z</updated>
     
     <summary type="html">
     
@@ -29,21 +29,23 @@
       
         
         
-          &lt;h1 id=&quot;一文讲透从输入URL到浏览器显示页面发生了什么&quot;&gt;&lt;a href=&quot;#一文讲透从输入URL到浏览器显示页面发生了什么&quot; class=&quot;headerlink&quot;
+          &lt;h4 id=&quot;什么是抽象类和接口&quot;&gt;&lt;a href=&quot;#什么是抽象类和接口&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
     
+      <category term="Java基础" scheme="http://yoursite.com/tags/Java%E5%9F%BA%E7%A1%80/"/>
+    
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://yoursite.com/2019/03/06/yi-wen-jiang-tou-chou-xiang-lei-he-jie-kou/"/>
-    <id>http://yoursite.com/2019/03/06/yi-wen-jiang-tou-chou-xiang-lei-he-jie-kou/</id>
-    <published>2019-03-06T09:10:33.802Z</published>
-    <updated>2019-03-06T11:35:33.505Z</updated>
+    <title>一文讲透hashCode和equals方法</title>
+    <link href="http://yoursite.com/2019/03/13/yi-wen-jiang-tou-hashcode-he-equals-fang-fa/"/>
+    <id>http://yoursite.com/2019/03/13/yi-wen-jiang-tou-hashcode-he-equals-fang-fa/</id>
+    <published>2019-03-13T14:16:59.946Z</published>
+    <updated>2019-03-14T15:42:00.087Z</updated>
     
     <summary type="html">
     
@@ -51,29 +53,8 @@
       
         
         
-          &lt;h3 id=&quot;一文讲透抽象类和接口&quot;&gt;&lt;a href=&quot;#一文讲透抽象类和接口&quot; class=&quot;headerlink&quot; title=&quot;一文讲透抽象类和接口&quot;&gt;&lt;/a&gt;一文讲透抽象类和接口&lt;/h3&gt;&lt;h4 id=&quot;什么是抽象类和接口&quot;&gt;&lt;a href=&quot;#什么是抽象类和接口&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>深入理解分而治之与快速排序</title>
-    <link href="http://yoursite.com/2019/02/28/fen-er-zhi-zhi-yu-kuai-su-pai-xu/"/>
-    <id>http://yoursite.com/2019/02/28/fen-er-zhi-zhi-yu-kuai-su-pai-xu/</id>
-    <published>2019-02-28T10:47:43.000Z</published>
-    <updated>2019-02-28T10:54:04.447Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;一-分而治之&quot;&gt;&lt;a href=&quot;#一-分而治之&quot; class=&quot;headerlink&quot; title=&quot;一.分而治之&quot;&gt;&lt;/a&gt;一.分而治之&lt;/h2&gt;&lt;p&gt;分而治之（divide and
+          &lt;p&gt;本文主要回答一下几个问题，意在消除所有关于HashCode和equals方法的模糊地带，彻底掌握这个知识点，虽然HashCode和equals是Java中的基础概念但是包含的内容却一点也不少，所谓基础不牢，地动山摇，所以大家还是重视。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0.到底
         
       
     
@@ -86,10 +67,10 @@
   
   <entry>
     <title>判断奇偶</title>
-    <link href="http://yoursite.com/2019/02/03/pan-duan-qi-ou/"/>
-    <id>http://yoursite.com/2019/02/03/pan-duan-qi-ou/</id>
-    <published>2019-02-03T02:38:29.000Z</published>
-    <updated>2019-03-12T15:47:08.192Z</updated>
+    <link href="http://yoursite.com/2019/03/12/pan-duan-qi-ou/"/>
+    <id>http://yoursite.com/2019/03/12/pan-duan-qi-ou/</id>
+    <published>2019-03-12T03:38:29.000Z</published>
+    <updated>2019-03-14T15:41:11.730Z</updated>
     
     <summary type="html">
     
@@ -108,7 +89,56 @@
     </summary>
     
     
-      <category term="基础知识" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+      <category term="Java基础" scheme="http://yoursite.com/tags/Java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一文讲透从输入URL到浏览器显示页面发生了什么</title>
+    <link href="http://yoursite.com/2019/03/07/yi-wen-jiang-tou-cong-shu-ru-url-dao-liu-lan-qi-xian-shi-ye-mian-fa-sheng-liao-shi-me/"/>
+    <id>http://yoursite.com/2019/03/07/yi-wen-jiang-tou-cong-shu-ru-url-dao-liu-lan-qi-xian-shi-ye-mian-fa-sheng-liao-shi-me/</id>
+    <published>2019-03-07T08:24:21.251Z</published>
+    <updated>2019-03-14T15:42:48.275Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这是一个老生常谈的话题，今天我们再来详细想分析一波。&lt;/p&gt;
+&lt;h6 id=&quot;1-浏览器对用户输入的网址-域名-做初步的格式化检查，域名是一个逻辑概念&quot;&gt;&lt;a href=&quot;#1-浏览器对用户输入的网址-域名-做初步的格式化检查，域名是一个逻辑概念&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="算法，数据结构" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95%EF%BC%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入理解分而治之与快速排序</title>
+    <link href="http://yoursite.com/2019/02/28/fen-er-zhi-zhi-yu-kuai-su-pai-xu/"/>
+    <id>http://yoursite.com/2019/02/28/fen-er-zhi-zhi-yu-kuai-su-pai-xu/</id>
+    <published>2019-02-28T10:47:43.000Z</published>
+    <updated>2019-03-14T15:40:19.286Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一-分而治之&quot;&gt;&lt;a href=&quot;#一-分而治之&quot; class=&quot;headerlink&quot; title=&quot;一.分而治之&quot;&gt;&lt;/a&gt;一.分而治之&lt;/h2&gt;&lt;p&gt;分而治之（divide and
+        
+      
+    
+    </summary>
+    
+    
+      <category term="算法，数据结构" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95%EF%BC%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
