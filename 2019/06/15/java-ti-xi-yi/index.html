@@ -4,10 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="一文讲透抽象类和接口, Record">
-    <meta name="description" content="什么是抽象类和接口抽象类：简而言之，用abstract关键词修饰的类就是抽象类，抽象类不能创建实例对象，即不能new对象。
-接口：接口就是一种特殊的抽象类，接口中的所有方法都必须是抽象的且默认是public abstaract类型的。
-接口">
+    <meta name="keywords" content="Java体系(一), Record">
+    <meta name="description" content="
+前言：很长时间没写博客了，目前大三，通过这段时间的学习，对技术有了宏观上的视野，对Java的生态体系也有了较深的理解，所以停止了动笔主要是因为发觉之前自己的知识体系有很大的漏洞，IT所有技术的学习就好比数据库建索引的过程，如果没有清晰认知">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>一文讲透抽象类和接口 | MyBlog</title>
+    <title>Java体系(一) | MyBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -282,13 +281,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        一文讲透抽象类和接口
+                        Java体系(一)
                     </div>
                 </div>
             </div>
@@ -401,8 +400,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java基础/" target="_blank">
-                                <span class="chip bg-color">Java基础</span>
+                            <a href="/tags/Java体系/" target="_blank">
+                                <span class="chip bg-color">Java体系</span>
                             </a>
                         
                     </div>
@@ -416,21 +415,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-14
+                    2019-06-15
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.1k
+                        2.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        8 分
                     </div>
                     
                 
@@ -446,89 +445,42 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="什么是抽象类和接口"><a href="#什么是抽象类和接口" class="headerlink" title="什么是抽象类和接口"></a>什么是抽象类和接口</h4><p>抽象类：简而言之，用abstract关键词修饰的类就是抽象类，抽象类不能创建实例对象，即不能new对象。</p>
-<p>接口：接口就是一种特殊的抽象类，接口中的所有方法都必须是抽象的且默认是public abstaract类型的。</p>
-<h4 id="接口的思想是什么"><a href="#接口的思想是什么" class="headerlink" title="接口的思想是什么"></a>接口的思想是什么</h4><p>Java为什么在有了抽象类还需要提出接口？</p>
-<p>因为抽象类依然没有摆脱类的概念，也就是说抽象类还必须由继承它的子类去实现抽象类中的抽象方法，本质上还是面向对象中的继承思想，而在现实世界中继承的关系虽然随处可见，但更多的思想是“对某种功能的实现“，比如客户提出我想要一个可以通信的工具，于是很多商家针对这种需求开发了对讲机，手机，固话等，可以明显的发现对讲机，手机，固话并不是对通信工具的继承，因为通信工具甚至没有一个具体的概念，也就是说它的抽象层次非常高，仅仅只是对”通信“这个功能的描述，而如果是传统的类就需要定义具体的属性，方法等。</p>
-<p>所以，继面向对象后Java提出了面向接口编程，接口只定义模块之间的通信契约，而抽象类在代码实现方面发挥了具体作用，两者的应用范围是不一样的。</p>
-<p>在jdk源码中随处可见的更多的是接口和抽象类，Java用接口的方式间接的实现了“多继承”，而声明接口创建实现类也是多态的一种体现。</p>
-<pre class=" language-Java"><code class="language-Java">public interface Signal{}
-public SignalImpl implements Signal{}
-public class Test(){
-    Signal signal = new SignalImpl();
-}
-</code></pre>
-<h4 id="深入两者的各种区别"><a href="#深入两者的各种区别" class="headerlink" title="深入两者的各种区别"></a>深入两者的各种区别</h4><p>1.抽象类可以有构造方法，接口中不能有。</p>
-<p>2.抽象类中可以有普通成员变量，接口中不能有。</p>
-<p>3.抽象类可以包含非抽象的普通方法，接口在jdk中也可以，但必须用default修饰方法。</p>
-<pre class=" language-Java"><code class="language-Java">public interface Test {
-        default int sum(int i,int j) {
-        return i * j;
-    }
-}
-</code></pre>
-<p>但不推荐这么做，应该尽可能的写成</p>
-<pre><code>public interface Test {
-        int sum(int i,int j);        
-    }
-}
-</code></pre><p>以供实现类去实现这个方法。</p>
-<p>4.抽象类中的抽象方法的访问类型可以是public,protected,默认，但静态抽象方法不能是默认的，而接口默认即为public abstract。</p>
-<p>5.抽象类中可以包含静态方法，但接口中不能包含静态方法。</p>
-<p>6.抽象类和接口中都可以包含静态成员变量，抽象类中静态成员变量访问类型可以任意，但接口中定义的成员变量只能是public static final类型，并且默认如此。</p>
-<p>7.一个类可以实现多个接口，但只能继承一个抽象类。</p>
-<h4 id="一个抽象类的经典应用"><a href="#一个抽象类的经典应用" class="headerlink" title="一个抽象类的经典应用"></a>一个抽象类的经典应用</h4><p>模板方法设计模式是抽象类的一个典型应用，假设某个项目中所有的Servlet类都要 用相同的方式进行权限判断，记录访问日志，异常处理，那么就可以定义一个抽象的基类，在抽象基类的service方法中完成所有的逻辑。</p>
-<p>例如：</p>
-<blockquote>
-<p>localhost:8080/store/productServlet?method=addProduct</p>
+                <blockquote>
+<p>前言：很长时间没写博客了，目前大三，通过这段时间的学习，对技术有了宏观上的视野，对Java的生态体系也有了较深的理解，所以停止了动笔主要是因为发觉之前自己的知识体系有很大的漏洞，IT所有技术的学习就好比数据库建索引的过程，如果没有清晰认知到整个技术的骨架，难免会步入迷茫的困境，所以这段时间主要用来学习各种知识，构建自己的Java体系，这个系列的博客大概会更多期，第一篇我先从湿货谈起。</p>
 </blockquote>
-<p>我们可以在访问productServlet传入一个方法addProduct，定义一个BaseServlet继承自HttpServlet抽象类。</p>
-<p>采用底层字节码技术就可以实现通用的逻辑设计</p>
-<pre class=" language-Java"><code class="language-Java">public class abstract BaseServlet extends HttpServlet {
-    @Override
-    public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        // localhost:8080/store/ProductServlet?method=findProductByPid&pid=1
-        String method = req.getParameter("method");
-
-        if (null == method || "".equals(method) || method.trim().equals("")) {
-            method = "execute";
-        }
-
-        Class clazz = this.getClass();
-        try {
-            Method md = clazz.getMethod(method, HttpServletRequest.class, HttpServletResponse.class);
-            if(null!=md){
-                String jspPath = (String)md.invoke(this, req, resp);
-                if (null != jspPath) {
-                    req.getRequestDispatcher(jspPath).forward(req, resp);
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    // 默认方法
-    public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        return null;
-    }
-</code></pre>
-<pre class=" language-Java"><code class="language-Java">public class ProductServlet extends BaseServlet {
-    public String findProductByPid(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        //获取商品pid
-        String pid = req.getParameter("pid");
-        //根据商品pid查询商品信息
-        IProductService prodectService = new ProductServiceImpl();
-        Product product = prodectService.findByProductByPid(pid);
-        //将获取到的商品放入request
-        req.setAttribute("product", product);
-        //转发/jsp/product_info.jsp
-        return "/jsp/product_info.jsp";
-    }
-}
-</code></pre>
-<p>如此一来就不用直接继承自HttpServletRequest写大量的doGet,doPost方法,看起来就立马清爽了许多。</p>
+<h4 id="一-技术的发展趋势"><a href="#一-技术的发展趋势" class="headerlink" title="一.技术的发展趋势"></a>一.技术的发展趋势</h4><p>IT技术的更新真的是非常之快，近年来也可以明显的发现目前程序员岗位的门槛已显著提高，所以我认为技术视野和发展趋势对于任何一个程序员都是至关重要的，无论你是刚打算入行还是已经工作几年，如果方向不对，势必会大浪淘沙。</p>
+<p>就拿Java来说，现在早已不是哪个学学JavaSE懂点JavaWeb和框架就能找到工作的时期了，这里我随便挑一份标准的上万月薪的Java招聘简历举例：</p>
+<p><img src="https://img-blog.csdnimg.cn/2019042913285365.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4NDk3ODIw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>可以明显的看出目前整个市场对技术深度和广度都提出了更高的要求，这也是必然的，目前互联网行业已经进入了洗牌阶段，人口红利已趋近吃完，刚过去的互联网寒冬也给很多人敲醒了警钟。</p>
+<p>但我认为市场仍有很多人和媒体在过度贩卖焦虑，说IT已经濒临饱和，亦或是江河日下，我认为这是无稽之谈。就目前的市场来看，虽然经过996的热潮揭示出IT行业工作时长与时薪不成正比的问题，但IT仍然是高薪的代名词，这是毋庸置疑的。目前来看，移动互联网的红利显然已经吃完了，低阶的安卓和IOS人员已经需求量明显下降，小程序和大前端的概念和趋势也会愈加蚕食移动端的市场。不过打铁还需自身硬，如果有能力迈入高阶水平，还是可以有很多作为的，短期来看，能够再次引燃科技市场，带来新的变革的技术我认为是5G，区块链和人工智能。</p>
+<p>如果你逛过知乎，你会发现不知多少大V都在宣扬着转IT的政治正确言论，经常会有人这样的提问：、<br>多少多少岁，该不该转IT?<br>什么什么行业，该不该转IT?<br>什么什么专业，该不该转IT? </p>
+<p>很多人就会产生错觉，认为IT简单，钱多，有前途。这明显是认知误区，可以明显的发现其他行业有利可图都生怕你来占坑，IT却好像是明显有利可图，巴不得你来占坑，这真是一个有趣的现象。</p>
+<p>说到底，IT绝对不是一个低门槛的行业，虽然IT开源界有着独一无二的学习条件，但热爱编程，有技术热情的人其实很少，冲钱来的话，我断定你不会走太远，所以针对这些问题我只有一个评判标准，<strong>就是你是否有技术热情和对编程的敏锐度？</strong>，如果你看见代码就头疼，盯见bug就头大，我劝你还是不要趟这趟浑水了，<strong>适合自己的，永远是最重要的</strong>。</p>
+<h4 id="二-你应该选择什么技术"><a href="#二-你应该选择什么技术" class="headerlink" title="二.你应该选择什么技术"></a>二.你应该选择什么技术</h4><p>还是那句话，适合自己的，永远是最好的，只要是市场上有需求的你都可以选择，但是如果你实在不知道具体哪个技术适合你，那么我还是优先推荐Java，当然前端发展也很不错。</p>
+<p>如果有人告诉你，语言不重要，重要的是思维和基础，你就当他说废话好了，思维和基础那是素质，语言那是你吃饭的东西，且我们在说一门语言的时候仅仅是在讨论一门语言吗？显然不是，我们更看重的是这门语言背后的整个生态体系，社区活跃度，发展前景等等，当然选择一门语言一定不是说别的语言就一点也不接触，而是说这门语言是你的主要语言，你需要长久坚持，并搞深搞精！</p>
+<p>至于为何推荐Java，原因很简单，我们来看招聘岗位的需求就可以了：</p>
+<p>在前程无忧上搜索Java，全国的岗位是87459条。</p>
+<p>什么概念？我们先把主流技术都搜索一遍，除过嵌入式的C<br>前端：59077条。<br>C++：51120条。<br>算法：42397<br>Python：37363条。<br>C#：26664<br>PHP :17960条。<br>IOS:16432条。<br>安卓：9651条。<br>Go:5265条。</p>
+<p>岗位的需求体现着一门技术的热门程度和找工作的难易程度，显然选择Java是没有问题的。</p>
+<p>且从学习曲线的角度，Java要比C++平滑太多，下面简要介绍一下这些主流技术的应用范围和发展前景。</p>
+<p>前端：目前很火，跨平台开发的Futter，服务端的NodeJS，桌面端的electron，以及各种成熟的框架，应用范围很广，包括小程序，网页等所有设备的前端都可以涉猎。</p>
+<p>C++:  C++主要用来做高性能服务器端的开发，游戏引擎开发，windows桌面端QT开发，嵌入式等对性能实时性要求极高等场景，C++以陡峭和学习曲线和较高的开发成本著称。</p>
+<p>算法：门槛较高，对学历要求较高，对数学功底要求较高，目前主要以机器学习，图像处理，NLP，数据挖掘为主，主要应用领域有广告，推荐，搜索等。</p>
+<p>Python：典型的胶水语言，应用范围很广，库非常多，可以用来做算法，后端，数据分析，爬虫，自动化运维等。</p>
+<p>C#：不错的语言，但生态环境不好，主要用来做桌面的winform开发，unity3D开发，.net开发等。</p>
+<p>PHP :构建小型网站不错的选择，学习成本低，库多，开发速度快。</p>
+<p>IOS/安卓：主要做两个系统的各种app开发。</p>
+<p>Go：Docker/k8s的火爆，让go在云容器市场有很大的发挥空间，典型的就是七牛云，除此之外在后端开发也日渐上升，B站的后端就全部采用了go，在区块链领域也发展不错，go的生态也很好。</p>
+<p>那么Java能做什么呢？<br>坦白讲Java几乎什么都能做，各方面都很均衡，其安全性，健壮性，跨平台让Java可以开发大型的复杂系统，但大范围的应用领域是Web系统的后端开发，大数据开发，也可以深入学习Netty和多线程去做服务器开发，还有一些冷门领域例如桌面GUI的swing/javaFx开发，游戏开发等，很多人都以为Java不能做游戏前端的开发，其实不然，最近在github上发现了一个Java游戏开发引擎，非常不错，如果想自己做做游戏的，可以了解一下。</p>
+<p>链接：<a href="https://github.com/jMonkeyEngine/jmonkeyengine" target="_blank" rel="noopener">https://github.com/jMonkeyEngine/jmonkeyengine</a></p>
+<p>如果你还想从语言特性，语言设计等角度深层次的角度深入了解为何选择Java，建议你看这篇博客：</p>
+<p><a href="http://www.yinwang.org/blog-cn/2016/01/18/java" target="_blank" rel="noopener">http://www.yinwang.org/blog-cn/2016/01/18/java</a></p>
+<p>随着Java5的JUC，Java8的Lamada以及Java11提出的ZGC，很多人诟病的Java并发支持不够，语法臃肿代码量大，垃圾回收效率不够高等各种问题已经被解决，而且红帽被IBM收购，OpenJDK又被红帽接盘，Java的发展从未停滞，所以从任何角度来讲Java仍然是非常好的工业级语言。</p>
+<h4 id="三-深度还是广度？"><a href="#三-深度还是广度？" class="headerlink" title="三.深度还是广度？"></a>三.深度还是广度？</h4><p>深度和广度都很重要，需要自己权衡，最好是有一门很深入的，辅以其他均衡的，呈丁字型发展。</p>
+<p>广度体现在对多种技术的涉猎上，具体拿Java来说，除了必备的框架之外，分布式，消息队列，缓存，微服务的要求已经越来越普遍。</p>
+<p>深度体现在某一领域的深挖上，无论是技术还是业务的深挖都非常重要，同时体现在对基础，算法，底层的掌握程度上，比如JVM，数据结构，组成原理等。</p>
+<p>当然这些都是要在工作中逐步积累，不断学习，才能厚积薄发。</p>
+<h4 id="四-总结"><a href="#四-总结" class="headerlink" title="四.总结"></a>四.总结</h4><p>这篇博文主要是自己对技术视野的一个整体看法，个人认为还是非常重要的，之后我会主要针对Java体系，写出详细的干货，这些干货有些是自己摸索的产物，有些是各种前辈的总结，包括学习路线，学习方法，学习途径等，一方面是对自己构建知识体系的一种总结，另一方面也更希望能给更多人带来一定的帮助，我也会不断修改自己的措辞，保证语句尽可能的通俗易懂，简洁清晰。</p>
 
             </div>
             <hr>
@@ -669,7 +621,7 @@ public class Test(){
                     </span>
                     <a href="http://yoursite.com" class="b-link-green">MyBlog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/14/yi-wen-jiang-tou-chou-xiang-lei-he-jie-kou/" class="b-link-green">一文讲透抽象类和接口</a>
+                    <a href="/2019/06/15/java-ti-xi-yi/" class="b-link-green">Java体系(一)</a>
                 </p>
             </div>
         </div>
@@ -691,7 +643,7 @@ public class Test(){
         repo: 'RuleWork.github.io',
         owner: 'RuleWork',
         admin: ["RuleWork"],
-        id: '2019-03-14T23-36-14',
+        id: '2019-06-15T19-18-03',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -716,18 +668,20 @@ public class Test(){
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/06/15/di-gui-he-wei-di-gui/">
+                <a href="/2019/06/15/java-ti-xi-er/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="递归和尾递归">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Java体系(二)">
                         
-                        <span class="card-title">递归和尾递归</span>
+                        <span class="card-title">Java体系(二)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">一.什么是尾递归在之前的的第一篇文章中深入的探讨了什么递归，并在文末引出了一种新的递归方式：尾递归。
-接下来我们先给出定义：如果一个函数中所有递归形式的调用都出现在函数的末尾，即当递归调用是整个函数体中最后执行的语句且它的返回值不属于表达式</div>
+                    <div class="summary">
+前言：本文主要说说Java的学习路线，学习途径，学习方法。
+
+一.学习路线我个人推荐最扎实的学法，就是不仅限于语言的学习，对计算机基础也要系统的学习，基础是内功，千万不能小觑，如果你想成为一名真正优秀的程序员，内功必须扎实，否则当出现瓶颈</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-15
@@ -743,8 +697,8 @@ public class Test(){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/算法，数据结构/" target="_blank">
-                        <span class="chip bg-color">算法，数据结构</span>
+                    <a href="/tags/Java体系/" target="_blank">
+                        <span class="chip bg-color">Java体系</span>
                     </a>
                     
                 </div>
@@ -758,21 +712,21 @@ public class Test(){
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/03/13/yi-wen-jiang-tou-hashcode-he-equals-fang-fa/">
+                <a href="/2019/06/15/di-gui-he-wei-di-gui/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="一文讲透hashCode和equals方法">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="递归和尾递归">
                         
-                        <span class="card-title">一文讲透hashCode和equals方法</span>
+                        <span class="card-title">递归和尾递归</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">本文主要回答一下几个问题，意在消除所有关于HashCode和equals方法的模糊地带，彻底掌握这个知识点，虽然HashCode和equals是Java中的基础概念但是包含的内容却一点也不少，所谓基础不牢，地动山摇，所以大家还是重视。
-0.</div>
+                    <div class="summary">一.什么是尾递归在之前的的第一篇文章中深入的探讨了什么递归，并在文末引出了一种新的递归方式：尾递归。
+接下来我们先给出定义：如果一个函数中所有递归形式的调用都出现在函数的末尾，即当递归调用是整个函数体中最后执行的语句且它的返回值不属于表达式</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-13
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-15
                             </span>
                         <span class="publish-author">
                             
@@ -785,8 +739,8 @@ public class Test(){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java基础/" target="_blank">
-                        <span class="chip bg-color">Java基础</span>
+                    <a href="/tags/算法，数据结构/" target="_blank">
+                        <span class="chip bg-color">算法，数据结构</span>
                     </a>
                     
                 </div>

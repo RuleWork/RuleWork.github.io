@@ -4,6 +4,63 @@
   
     
     <entry>
+      <title>Java体系(二)</title>
+      <link href="/2019/06/15/java-ti-xi-er/"/>
+      <url>/2019/06/15/java-ti-xi-er/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>前言：本文主要说说Java的学习路线，学习途径，学习方法。</p></blockquote><h4 id="一-学习路线"><a href="#一-学习路线" class="headerlink" title="一.学习路线"></a>一.学习路线</h4><p>我个人推荐最扎实的学法，就是不仅限于语言的学习，对计算机基础也要系统的学习，基础是内功，千万不能小觑，如果你想成为一名真正优秀的程序员，内功必须扎实，否则当出现瓶颈的时候就追悔莫及了。</p><p>1.<strong>计算机基础</strong></p><p>数据结构：链表，栈，队列，树，图，排序算法等。</p><p>计算机网络：OSI模型，TCP/IP协议，UDP，HTTP/HTTPS，DNS，XSS/CSRF等。</p><p>操作系统：进程/线程/死锁，存储管理，文件系统，输入输出系统等。</p><p>计算机组成原理：二进制运算，存储/Cache，中断，CPU原理等。</p><blockquote><p>这四门是计算机学科的基础课程，原理非常之重要，是你理解计算机原理的必经之路，这里只是罗列它们当中我认为最重要的基础，当然这四门学科想要弄懂弄透，那还是要花费很大精力的。</p></blockquote><p>2.<strong>Java基础</strong></p><p>集合：ArrayList/LinkedList，HashMap/HashTable/ConcurrentHashMap，HashSet，TreeMap，BlockingQueue等。</p><p>IO：BIO，NIO，AIO，多路复用的模型(select,poll,epoll区别)</p><p>多线程：锁，线程创建，线程通信，JUC包，线程池等。</p><p>JVM：内存模型，内存划分，类加载机制，垃圾回收，调优等。</p><p>Java8/9/11新特性：Lambda，StreamAPI，ZGC等。</p><p><strong>3.JavaWeb</strong></p><p>前端：HTML/CSS/JavaScript/jQuery/BootStrap/Ajax/JSON等。</p><p>Tomcat/Weblogic：tomcat架构原理，weblogic集群搭建。</p><p>HTTP协议：协议组成，http1.0/1.1/2.0区别，常见协议状态</p><p>XML：命名空间，DOM/SAX/DOM4J解析。</p><p>Servlet/JSP：Servlet生命周期，转发/重定向，过滤器/监听器，Cookie/Session，EL表达式，jstl标签库。</p><p><strong>4.框架</strong></p><p>Struts2/SpringMVC：Struts2虽然被诟病过时，但还有很多老系统在用，两者可以对比着学。</p><p>Spring：Spring是重中之重，要对Spring ioc/aop原理深入学习，会使用Spring注解。</p><p>Mybatis/Hibernate：两者都得学，Mybatis的通用Mapper和Mybatis-plus推荐学习，Hibernate则是后续SpringData JPA的默认实现，两者有各自独自的优势，可以对比着学。</p><blockquote><p>要能熟练掌握SSH和SSM的整合开发，其实大量工作中的项目还是基于这种经典MVC模式。</p><p>除此之外如果你有极客精神，可以学学Blade和JFinal框架，可以进行极速开发。</p></blockquote><p><strong>5.J2EE相关组件</strong></p><p>搜索：solr和elasticsearch。</p><p>安全：shiro和SpringSecurity。</p><p>网络：Netty。</p><p><strong>5.分布式/集群</strong></p><p>理论：CAP，BASE，了解Paxos和Raft算法。</p><p>Nginx：高性能服务器，主要做反向代理和静态分离，加强版阿里的Tengine也值得关注。</p><p>Dubbo: 阿里出品的高性能RPC框架。</p><p>Zookeeper：分布式协调服务。</p><p>消息中间件：ActiveMQ，RocketMQ，RabbitMQ，Kafka，推荐学习RabbitMQ。</p><p><strong>7.微服务</strong></p><p>微服务概念(和分布式SOA的细微区别)</p><p>详情参见马丁·福勒论文，<a href="https://martinfowler.cn/bliki/MicroservicePrerequisites.html。" target="_blank" rel="noopener">https://martinfowler.cn/bliki/MicroservicePrerequisites.html。</a></p><p>SpringBoot：Spring的集大成者。</p><p>SpringCloud：微服务体系套件。</p><p>SpringData JPA：DAO层解决方案。</p><p>JHipster ：Java代码的脚手架，最时髦的Java解决方案集合。</p><p>Docker：容器部署。</p><p><strong>8.数据库</strong></p><p>数据库连接池：C3P0，DBCP，Druid，深入学习Druid即可。</p><p>关系型数据库：MySQL，Oracle，SQLServer，PostgreSQL，主要以MySQL为主，值得留意的是PostgreSQL目前也越来越流行。</p><p>非关系型数据库(NoSQL)：Redis，MongoDB，Memecache。主要以Redis为主。</p><p><strong>9.工具</strong></p><p>IDE:eclipse/idea，idea是大势所趋，不过eclipse短期也难以被取代，工具而已，不必特别纠结。</p><p>构建工具：以Maven为主，不过也可以学习一下Gradle。</p><p>版本控制：集中式SVN和分布式Git，Git/Github需要深入学习，尤其是要把github当做宝库，多浏览多学习。</p><p>持续集成：Jenkins。</p><p><strong>10.方法论</strong></p><p>软件设计原则。</p><p>23种设计模式。</p><p>详情参见：<a href="http://c.biancheng.net/design_pattern/" target="_blank" rel="noopener">http://c.biancheng.net/design_pattern/</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java体系 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java体系(一)</title>
+      <link href="/2019/06/15/java-ti-xi-yi/"/>
+      <url>/2019/06/15/java-ti-xi-yi/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>前言：很长时间没写博客了，目前大三，通过这段时间的学习，对技术有了宏观上的视野，对Java的生态体系也有了较深的理解，所以停止了动笔主要是因为发觉之前自己的知识体系有很大的漏洞，IT所有技术的学习就好比数据库建索引的过程，如果没有清晰认知到整个技术的骨架，难免会步入迷茫的困境，所以这段时间主要用来学习各种知识，构建自己的Java体系，这个系列的博客大概会更多期，第一篇我先从湿货谈起。</p></blockquote><h4 id="一-技术的发展趋势"><a href="#一-技术的发展趋势" class="headerlink" title="一.技术的发展趋势"></a>一.技术的发展趋势</h4><p>IT技术的更新真的是非常之快，近年来也可以明显的发现目前程序员岗位的门槛已显著提高，所以我认为技术视野和发展趋势对于任何一个程序员都是至关重要的，无论你是刚打算入行还是已经工作几年，如果方向不对，势必会大浪淘沙。</p><p>就拿Java来说，现在早已不是哪个学学JavaSE懂点JavaWeb和框架就能找到工作的时期了，这里我随便挑一份标准的上万月薪的Java招聘简历举例：</p><p><img src="https://img-blog.csdnimg.cn/2019042913285365.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4NDk3ODIw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p>可以明显的看出目前整个市场对技术深度和广度都提出了更高的要求，这也是必然的，目前互联网行业已经进入了洗牌阶段，人口红利已趋近吃完，刚过去的互联网寒冬也给很多人敲醒了警钟。</p><p>但我认为市场仍有很多人和媒体在过度贩卖焦虑，说IT已经濒临饱和，亦或是江河日下，我认为这是无稽之谈。就目前的市场来看，虽然经过996的热潮揭示出IT行业工作时长与时薪不成正比的问题，但IT仍然是高薪的代名词，这是毋庸置疑的。目前来看，移动互联网的红利显然已经吃完了，低阶的安卓和IOS人员已经需求量明显下降，小程序和大前端的概念和趋势也会愈加蚕食移动端的市场。不过打铁还需自身硬，如果有能力迈入高阶水平，还是可以有很多作为的，短期来看，能够再次引燃科技市场，带来新的变革的技术我认为是5G，区块链和人工智能。</p><p>如果你逛过知乎，你会发现不知多少大V都在宣扬着转IT的政治正确言论，经常会有人这样的提问：、<br>多少多少岁，该不该转IT?<br>什么什么行业，该不该转IT?<br>什么什么专业，该不该转IT? </p><p>很多人就会产生错觉，认为IT简单，钱多，有前途。这明显是认知误区，可以明显的发现其他行业有利可图都生怕你来占坑，IT却好像是明显有利可图，巴不得你来占坑，这真是一个有趣的现象。</p><p>说到底，IT绝对不是一个低门槛的行业，虽然IT开源界有着独一无二的学习条件，但热爱编程，有技术热情的人其实很少，冲钱来的话，我断定你不会走太远，所以针对这些问题我只有一个评判标准，<strong>就是你是否有技术热情和对编程的敏锐度？</strong>，如果你看见代码就头疼，盯见bug就头大，我劝你还是不要趟这趟浑水了，<strong>适合自己的，永远是最重要的</strong>。</p><h4 id="二-你应该选择什么技术"><a href="#二-你应该选择什么技术" class="headerlink" title="二.你应该选择什么技术"></a>二.你应该选择什么技术</h4><p>还是那句话，适合自己的，永远是最好的，只要是市场上有需求的你都可以选择，但是如果你实在不知道具体哪个技术适合你，那么我还是优先推荐Java，当然前端发展也很不错。</p><p>如果有人告诉你，语言不重要，重要的是思维和基础，你就当他说废话好了，思维和基础那是素质，语言那是你吃饭的东西，且我们在说一门语言的时候仅仅是在讨论一门语言吗？显然不是，我们更看重的是这门语言背后的整个生态体系，社区活跃度，发展前景等等，当然选择一门语言一定不是说别的语言就一点也不接触，而是说这门语言是你的主要语言，你需要长久坚持，并搞深搞精！</p><p>至于为何推荐Java，原因很简单，我们来看招聘岗位的需求就可以了：</p><p>在前程无忧上搜索Java，全国的岗位是87459条。</p><p>什么概念？我们先把主流技术都搜索一遍，除过嵌入式的C<br>前端：59077条。<br>C++：51120条。<br>算法：42397<br>Python：37363条。<br>C#：26664<br>PHP :17960条。<br>IOS:16432条。<br>安卓：9651条。<br>Go:5265条。</p><p>岗位的需求体现着一门技术的热门程度和找工作的难易程度，显然选择Java是没有问题的。</p><p>且从学习曲线的角度，Java要比C++平滑太多，下面简要介绍一下这些主流技术的应用范围和发展前景。</p><p>前端：目前很火，跨平台开发的Futter，服务端的NodeJS，桌面端的electron，以及各种成熟的框架，应用范围很广，包括小程序，网页等所有设备的前端都可以涉猎。</p><p>C++:  C++主要用来做高性能服务器端的开发，游戏引擎开发，windows桌面端QT开发，嵌入式等对性能实时性要求极高等场景，C++以陡峭和学习曲线和较高的开发成本著称。</p><p>算法：门槛较高，对学历要求较高，对数学功底要求较高，目前主要以机器学习，图像处理，NLP，数据挖掘为主，主要应用领域有广告，推荐，搜索等。</p><p>Python：典型的胶水语言，应用范围很广，库非常多，可以用来做算法，后端，数据分析，爬虫，自动化运维等。</p><p>C#：不错的语言，但生态环境不好，主要用来做桌面的winform开发，unity3D开发，.net开发等。</p><p>PHP :构建小型网站不错的选择，学习成本低，库多，开发速度快。</p><p>IOS/安卓：主要做两个系统的各种app开发。</p><p>Go：Docker/k8s的火爆，让go在云容器市场有很大的发挥空间，典型的就是七牛云，除此之外在后端开发也日渐上升，B站的后端就全部采用了go，在区块链领域也发展不错，go的生态也很好。</p><p>那么Java能做什么呢？<br>坦白讲Java几乎什么都能做，各方面都很均衡，其安全性，健壮性，跨平台让Java可以开发大型的复杂系统，但大范围的应用领域是Web系统的后端开发，大数据开发，也可以深入学习Netty和多线程去做服务器开发，还有一些冷门领域例如桌面GUI的swing/javaFx开发，游戏开发等，很多人都以为Java不能做游戏前端的开发，其实不然，最近在github上发现了一个Java游戏开发引擎，非常不错，如果想自己做做游戏的，可以了解一下。</p><p>链接：<a href="https://github.com/jMonkeyEngine/jmonkeyengine" target="_blank" rel="noopener">https://github.com/jMonkeyEngine/jmonkeyengine</a></p><p>如果你还想从语言特性，语言设计等角度深层次的角度深入了解为何选择Java，建议你看这篇博客：</p><p><a href="http://www.yinwang.org/blog-cn/2016/01/18/java" target="_blank" rel="noopener">http://www.yinwang.org/blog-cn/2016/01/18/java</a></p><p>随着Java5的JUC，Java8的Lamada以及Java11提出的ZGC，很多人诟病的Java并发支持不够，语法臃肿代码量大，垃圾回收效率不够高等各种问题已经被解决，而且红帽被IBM收购，OpenJDK又被红帽接盘，Java的发展从未停滞，所以从任何角度来讲Java仍然是非常好的工业级语言。</p><h4 id="三-深度还是广度？"><a href="#三-深度还是广度？" class="headerlink" title="三.深度还是广度？"></a>三.深度还是广度？</h4><p>深度和广度都很重要，需要自己权衡，最好是有一门很深入的，辅以其他均衡的，呈丁字型发展。</p><p>广度体现在对多种技术的涉猎上，具体拿Java来说，除了必备的框架之外，分布式，消息队列，缓存，微服务的要求已经越来越普遍。</p><p>深度体现在某一领域的深挖上，无论是技术还是业务的深挖都非常重要，同时体现在对基础，算法，底层的掌握程度上，比如JVM，数据结构，组成原理等。</p><p>当然这些都是要在工作中逐步积累，不断学习，才能厚积薄发。</p><h4 id="四-总结"><a href="#四-总结" class="headerlink" title="四.总结"></a>四.总结</h4><p>这篇博文主要是自己对技术视野的一个整体看法，个人认为还是非常重要的，之后我会主要针对Java体系，写出详细的干货，这些干货有些是自己摸索的产物，有些是各种前辈的总结，包括学习路线，学习方法，学习途径等，一方面是对自己构建知识体系的一种总结，另一方面也更希望能给更多人带来一定的帮助，我也会不断修改自己的措辞，保证语句尽可能的通俗易懂，简洁清晰。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java体系 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>递归和尾递归</title>
+      <link href="/2019/06/15/di-gui-he-wei-di-gui/"/>
+      <url>/2019/06/15/di-gui-he-wei-di-gui/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一-什么是尾递归"><a href="#一-什么是尾递归" class="headerlink" title="一.什么是尾递归"></a>一.什么是尾递归</h2><p>在之前的的第一篇文章中深入的探讨了什么递归，并在文末引出了一种新的递归方式：<strong>尾递归</strong>。</p><p>接下来我们先给出定义：<br>如果一个函数中所有递归形式的调用都出现在<strong>函数的末尾</strong>，即当递归调用是整个函数体中<strong>最后执行的语句</strong>且它的返回值<strong>不属于表达式的一部分</strong>时，这个递归调用就是尾递归。尾递归函数的特点是<strong>在回归过程中不用做任何操作</strong>，这个特性很重要，因为大多数现代的编译器会利用这种特点自动生成优化的代码。</p><p>定义是很官方的，接下来我会用最通俗的语言说明什么尾递归。简单来说，<strong>尾递归就是把当前的运算结果（或路径）放在参数里传给下层函数。</strong></p><h2 id="二-尾递归的原理"><a href="#二-尾递归的原理" class="headerlink" title="二.尾递归的原理"></a>二.尾递归的原理</h2><p>当编译器检测到一个函数调用是尾递归的时候，它就覆盖当前的活动记录而不是在栈中去创建一个新的。编译器可以做到这点，因为递归调用是当前活跃期内最后一条待执行的语句，于是当这个调用返回时栈帧中并没有其他事情可做，因此也就没有保存栈帧的必要了。通过覆盖当前的栈帧而不是在其之上重新添加一个，这样所使用的栈空间就大大缩减了，这使得实际的运行效率会变得更高。</p><h2 id="三-递归与尾递归的区别"><a href="#三-递归与尾递归的区别" class="headerlink" title="三.递归与尾递归的区别"></a>三.递归与尾递归的区别</h2><p>我们先通过大家熟知的阶乘函数来举例：</p><pre><code>int fact(int n) {    if (n &lt; 0)        return 0;    else if(n == 0 || n == 1)        return 1;    else        return n * fact(n - 1);}</code></pre><pre><code>int fact(int n, int result){    if (n &lt; 0)        return 0;    else if (n == 0)        return 1;    else if (n == 1)        return result;    else        return fact(n - 1, n * result);}</code></pre><p>显然，代码一是一个普通的递归，代码二则是一个尾递归。我们观察两者的不同就会发现:<br>1.尾递归<strong>多加了一个参数result</strong>作为结果进行返回，我们调用时初始传入result=1.<br>2.尾递归在递归调用时并没有再出现n，而是直接调用了本函数，这也就是定义中说的<strong>返回值不属于某一表达式的一部分，而是仅仅只调用本函数。</strong></p><h2 id="四-尾递归的特点"><a href="#四-尾递归的特点" class="headerlink" title="四.尾递归的特点"></a>四.尾递归的特点</h2><p>尾递归就是从最后开始计算, 每递归一次就算出相应的结果, 也就是说, 函数调用出现在调用者函数的尾部, 因为是尾部, 所以根本没有必要去保存任何局部变量. 直接让被调用的函数返回时越过调用者, 返回到调用者的调用者去.</p><p>我们再来看一个更加清楚的例子，这个例子会完美的阐释尾递归的威力：</p><pre><code>//普通的线性递归：long Rescuvie(long n) {    return (n == 1) ? 1 : n * Rescuvie(n - 1);}</code></pre><pre><code>//尾递归long TailRescuvie(long n, long result) {  return (n == 1) ? result : TailRescuvie(n - 1, result * n);}long TailRescuvie(long n) {//封装用的    return (n == 0) ? 1 : TailRescuvie(n, 1); }</code></pre><p>这里我们可以看到在尾递归中写了两个函数，这里用到了函数的<strong>重载</strong>，<strong>即我们通过调用第二个函数从而再递归的调用第一个函数</strong>。</p><p>接下类我们一步步的执行普通的线性递归和尾递归，观察两者的不同。</p><p>当n = 5时<br>对于线性递归, 他的递归过程如下:<br>Rescuvie(5)<br>{5 <em> Rescuvie(4)}<br>{5 </em> {4 <em> Rescuvie(3)}}<br>{5 </em> {4 <em> {3 </em> Rescuvie(2)}}}<br>{5 <em> {4 </em> {3 <em> {2 </em> Rescuvie(1)}}}}<br>{5 <em> {4 </em> {3 <em> {2 </em> 1}}}}<br>{5 <em> {4 </em> {3 <em> 2}}}<br>{5 </em> {4 <em> 6}}<br>{5 </em> 24}<br>120</p><p>对于尾递归, 他的递归过程如下:<br>TailRescuvie(5)<br>TailRescuvie(5, 1)<br>TailRescuvie(4, 5)<br>TailRescuvie(3, 20)<br>TailRescuvie(2, 60)<br>TailRescuvie(1, 120)<br>120</p><p>这里我们便很容易看出, 普通的线性递归比尾递归更加消耗资源, 在实现上说, 每次重复的过程<br>调用都使得调用链条不断加长. 系统不得不使用栈进行数据保存和恢复.而尾递归就不存在这样的问题, 因为他的状态完全由n和result保存，且一直充当参数，所以栈每次只用保存后一个函数即可，因此我们可以形象的说尾递归就是<strong>不压栈的递归</strong>。</p><h2 id="五-尾递归的作用及其重要性"><a href="#五-尾递归的作用及其重要性" class="headerlink" title="五.尾递归的作用及其重要性"></a>五.尾递归的作用及其重要性</h2><p>显然尾递归是极其重要的，不用尾递归，函数的堆栈耗用难以估量，需要保存很多中间函数的堆栈。比如sum(n) = f(n) = f(n-1) + value(n) ;会保存n个函数调用堆栈，而使用尾递归f(n, sum) = f(n-1, sum+value(n)); 这样则只保留一个函数堆栈即可，之前的可优化删去。</p><p>而尾递归的用途一般会在erlang这个语言中发挥的淋漓尽致，因为erlang是一种函数式编程语言，erlang中没有循环，只能通过递归和列表解析来实现循环的功能。但众所周知递归典型的代码简洁但效率极低的，所以通过尾递归来对递归进行优化就显然锦上添花了。</p><h2 id="六-一个用例"><a href="#六-一个用例" class="headerlink" title="六.一个用例"></a>六.一个用例</h2><p>在前一篇文章中我们用python实现了快速排序，那么我们最后在用C语言和尾递归来实现一下快速排序</p><pre><code>void quickSort(SqList * list , int low ,int high){     int pivot;     while(low&lt;high)    {        pivot=Partition(list,low,high);        quickSort(list, low,pivot - 1);        //quickSort(list,low,pivot-1); /*原递归调用需要两行代码*/        //quickSort(list,pivot+1,high);        low = pivot+1; /*尾递归*/    }}</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 算法，数据结构 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>一文讲透抽象类和接口</title>
       <link href="/2019/03/14/yi-wen-jiang-tou-chou-xiang-lei-he-jie-kou/"/>
       <url>/2019/03/14/yi-wen-jiang-tou-chou-xiang-lei-he-jie-kou/</url>
@@ -33,7 +90,7 @@
       
         <tags>
             
-            <tag> 算法，数据结构 </tag>
+            <tag> Java基础 </tag>
             
         </tags>
       
@@ -71,7 +128,7 @@
       
         <tags>
             
-            <tag> 算法，数据结构 </tag>
+            <tag> 计算机网络 </tag>
             
         </tags>
       

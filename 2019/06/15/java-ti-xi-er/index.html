@@ -4,10 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="一文讲透抽象类和接口, Record">
-    <meta name="description" content="什么是抽象类和接口抽象类：简而言之，用abstract关键词修饰的类就是抽象类，抽象类不能创建实例对象，即不能new对象。
-接口：接口就是一种特殊的抽象类，接口中的所有方法都必须是抽象的且默认是public abstaract类型的。
-接口">
+    <meta name="keywords" content="Java体系(二), Record">
+    <meta name="description" content="
+前言：本文主要说说Java的学习路线，学习途径，学习方法。
+
+一.学习路线我个人推荐最扎实的学法，就是不仅限于语言的学习，对计算机基础也要系统的学习，基础是内功，千万不能小觑，如果你想成为一名真正优秀的程序员，内功必须扎实，否则当出现瓶颈">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>一文讲透抽象类和接口 | MyBlog</title>
+    <title>Java体系(二) | MyBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -282,13 +283,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        一文讲透抽象类和接口
+                        Java体系(二)
                     </div>
                 </div>
             </div>
@@ -401,8 +402,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java基础/" target="_blank">
-                                <span class="chip bg-color">Java基础</span>
+                            <a href="/tags/Java体系/" target="_blank">
+                                <span class="chip bg-color">Java体系</span>
                             </a>
                         
                     </div>
@@ -416,21 +417,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-14
+                    2019-06-15
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.1k
+                        965
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        3 分
                     </div>
                     
                 
@@ -446,89 +447,69 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="什么是抽象类和接口"><a href="#什么是抽象类和接口" class="headerlink" title="什么是抽象类和接口"></a>什么是抽象类和接口</h4><p>抽象类：简而言之，用abstract关键词修饰的类就是抽象类，抽象类不能创建实例对象，即不能new对象。</p>
-<p>接口：接口就是一种特殊的抽象类，接口中的所有方法都必须是抽象的且默认是public abstaract类型的。</p>
-<h4 id="接口的思想是什么"><a href="#接口的思想是什么" class="headerlink" title="接口的思想是什么"></a>接口的思想是什么</h4><p>Java为什么在有了抽象类还需要提出接口？</p>
-<p>因为抽象类依然没有摆脱类的概念，也就是说抽象类还必须由继承它的子类去实现抽象类中的抽象方法，本质上还是面向对象中的继承思想，而在现实世界中继承的关系虽然随处可见，但更多的思想是“对某种功能的实现“，比如客户提出我想要一个可以通信的工具，于是很多商家针对这种需求开发了对讲机，手机，固话等，可以明显的发现对讲机，手机，固话并不是对通信工具的继承，因为通信工具甚至没有一个具体的概念，也就是说它的抽象层次非常高，仅仅只是对”通信“这个功能的描述，而如果是传统的类就需要定义具体的属性，方法等。</p>
-<p>所以，继面向对象后Java提出了面向接口编程，接口只定义模块之间的通信契约，而抽象类在代码实现方面发挥了具体作用，两者的应用范围是不一样的。</p>
-<p>在jdk源码中随处可见的更多的是接口和抽象类，Java用接口的方式间接的实现了“多继承”，而声明接口创建实现类也是多态的一种体现。</p>
-<pre class=" language-Java"><code class="language-Java">public interface Signal{}
-public SignalImpl implements Signal{}
-public class Test(){
-    Signal signal = new SignalImpl();
-}
-</code></pre>
-<h4 id="深入两者的各种区别"><a href="#深入两者的各种区别" class="headerlink" title="深入两者的各种区别"></a>深入两者的各种区别</h4><p>1.抽象类可以有构造方法，接口中不能有。</p>
-<p>2.抽象类中可以有普通成员变量，接口中不能有。</p>
-<p>3.抽象类可以包含非抽象的普通方法，接口在jdk中也可以，但必须用default修饰方法。</p>
-<pre class=" language-Java"><code class="language-Java">public interface Test {
-        default int sum(int i,int j) {
-        return i * j;
-    }
-}
-</code></pre>
-<p>但不推荐这么做，应该尽可能的写成</p>
-<pre><code>public interface Test {
-        int sum(int i,int j);        
-    }
-}
-</code></pre><p>以供实现类去实现这个方法。</p>
-<p>4.抽象类中的抽象方法的访问类型可以是public,protected,默认，但静态抽象方法不能是默认的，而接口默认即为public abstract。</p>
-<p>5.抽象类中可以包含静态方法，但接口中不能包含静态方法。</p>
-<p>6.抽象类和接口中都可以包含静态成员变量，抽象类中静态成员变量访问类型可以任意，但接口中定义的成员变量只能是public static final类型，并且默认如此。</p>
-<p>7.一个类可以实现多个接口，但只能继承一个抽象类。</p>
-<h4 id="一个抽象类的经典应用"><a href="#一个抽象类的经典应用" class="headerlink" title="一个抽象类的经典应用"></a>一个抽象类的经典应用</h4><p>模板方法设计模式是抽象类的一个典型应用，假设某个项目中所有的Servlet类都要 用相同的方式进行权限判断，记录访问日志，异常处理，那么就可以定义一个抽象的基类，在抽象基类的service方法中完成所有的逻辑。</p>
-<p>例如：</p>
-<blockquote>
-<p>localhost:8080/store/productServlet?method=addProduct</p>
+                <blockquote>
+<p>前言：本文主要说说Java的学习路线，学习途径，学习方法。</p>
 </blockquote>
-<p>我们可以在访问productServlet传入一个方法addProduct，定义一个BaseServlet继承自HttpServlet抽象类。</p>
-<p>采用底层字节码技术就可以实现通用的逻辑设计</p>
-<pre class=" language-Java"><code class="language-Java">public class abstract BaseServlet extends HttpServlet {
-    @Override
-    public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        // localhost:8080/store/ProductServlet?method=findProductByPid&pid=1
-        String method = req.getParameter("method");
-
-        if (null == method || "".equals(method) || method.trim().equals("")) {
-            method = "execute";
-        }
-
-        Class clazz = this.getClass();
-        try {
-            Method md = clazz.getMethod(method, HttpServletRequest.class, HttpServletResponse.class);
-            if(null!=md){
-                String jspPath = (String)md.invoke(this, req, resp);
-                if (null != jspPath) {
-                    req.getRequestDispatcher(jspPath).forward(req, resp);
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    // 默认方法
-    public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        return null;
-    }
-</code></pre>
-<pre class=" language-Java"><code class="language-Java">public class ProductServlet extends BaseServlet {
-    public String findProductByPid(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        //获取商品pid
-        String pid = req.getParameter("pid");
-        //根据商品pid查询商品信息
-        IProductService prodectService = new ProductServiceImpl();
-        Product product = prodectService.findByProductByPid(pid);
-        //将获取到的商品放入request
-        req.setAttribute("product", product);
-        //转发/jsp/product_info.jsp
-        return "/jsp/product_info.jsp";
-    }
-}
-</code></pre>
-<p>如此一来就不用直接继承自HttpServletRequest写大量的doGet,doPost方法,看起来就立马清爽了许多。</p>
+<h4 id="一-学习路线"><a href="#一-学习路线" class="headerlink" title="一.学习路线"></a>一.学习路线</h4><p>我个人推荐最扎实的学法，就是不仅限于语言的学习，对计算机基础也要系统的学习，基础是内功，千万不能小觑，如果你想成为一名真正优秀的程序员，内功必须扎实，否则当出现瓶颈的时候就追悔莫及了。</p>
+<p>1.<strong>计算机基础</strong></p>
+<p>数据结构：链表，栈，队列，树，图，排序算法等。</p>
+<p>计算机网络：OSI模型，TCP/IP协议，UDP，HTTP/HTTPS，DNS，XSS/CSRF等。</p>
+<p>操作系统：进程/线程/死锁，存储管理，文件系统，输入输出系统等。</p>
+<p>计算机组成原理：二进制运算，存储/Cache，中断，CPU原理等。</p>
+<blockquote>
+<p>这四门是计算机学科的基础课程，原理非常之重要，是你理解计算机原理的必经之路，这里只是罗列它们当中我认为最重要的基础，当然这四门学科想要弄懂弄透，那还是要花费很大精力的。</p>
+</blockquote>
+<p>2.<strong>Java基础</strong></p>
+<p>集合：ArrayList/LinkedList，HashMap/HashTable/ConcurrentHashMap，HashSet，TreeMap，BlockingQueue等。</p>
+<p>IO：BIO，NIO，AIO，多路复用的模型(select,poll,epoll区别)</p>
+<p>多线程：锁，线程创建，线程通信，JUC包，线程池等。</p>
+<p>JVM：内存模型，内存划分，类加载机制，垃圾回收，调优等。</p>
+<p>Java8/9/11新特性：Lambda，StreamAPI，ZGC等。</p>
+<p><strong>3.JavaWeb</strong></p>
+<p>前端：HTML/CSS/JavaScript/jQuery/BootStrap/Ajax/JSON等。</p>
+<p>Tomcat/Weblogic：tomcat架构原理，weblogic集群搭建。</p>
+<p>HTTP协议：协议组成，http1.0/1.1/2.0区别，常见协议状态</p>
+<p>XML：命名空间，DOM/SAX/DOM4J解析。</p>
+<p>Servlet/JSP：Servlet生命周期，转发/重定向，过滤器/监听器，Cookie/Session，EL表达式，jstl标签库。</p>
+<p><strong>4.框架</strong></p>
+<p>Struts2/SpringMVC：Struts2虽然被诟病过时，但还有很多老系统在用，两者可以对比着学。</p>
+<p>Spring：Spring是重中之重，要对Spring ioc/aop原理深入学习，会使用Spring注解。</p>
+<p>Mybatis/Hibernate：两者都得学，Mybatis的通用Mapper和Mybatis-plus推荐学习，Hibernate则是后续SpringData JPA的默认实现，两者有各自独自的优势，可以对比着学。</p>
+<blockquote>
+<p>要能熟练掌握SSH和SSM的整合开发，其实大量工作中的项目还是基于这种经典MVC模式。</p>
+<p>除此之外如果你有极客精神，可以学学Blade和JFinal框架，可以进行极速开发。</p>
+</blockquote>
+<p><strong>5.J2EE相关组件</strong></p>
+<p>搜索：solr和elasticsearch。</p>
+<p>安全：shiro和SpringSecurity。</p>
+<p>网络：Netty。</p>
+<p><strong>5.分布式/集群</strong></p>
+<p>理论：CAP，BASE，了解Paxos和Raft算法。</p>
+<p>Nginx：高性能服务器，主要做反向代理和静态分离，加强版阿里的Tengine也值得关注。</p>
+<p>Dubbo: 阿里出品的高性能RPC框架。</p>
+<p>Zookeeper：分布式协调服务。</p>
+<p>消息中间件：ActiveMQ，RocketMQ，RabbitMQ，Kafka，推荐学习RabbitMQ。</p>
+<p><strong>7.微服务</strong></p>
+<p>微服务概念(和分布式SOA的细微区别)</p>
+<p>详情参见马丁·福勒论文，<a href="https://martinfowler.cn/bliki/MicroservicePrerequisites.html。" target="_blank" rel="noopener">https://martinfowler.cn/bliki/MicroservicePrerequisites.html。</a></p>
+<p>SpringBoot：Spring的集大成者。</p>
+<p>SpringCloud：微服务体系套件。</p>
+<p>SpringData JPA：DAO层解决方案。</p>
+<p>JHipster ：Java代码的脚手架，最时髦的Java解决方案集合。</p>
+<p>Docker：容器部署。</p>
+<p><strong>8.数据库</strong></p>
+<p>数据库连接池：C3P0，DBCP，Druid，深入学习Druid即可。</p>
+<p>关系型数据库：MySQL，Oracle，SQLServer，PostgreSQL，主要以MySQL为主，值得留意的是PostgreSQL目前也越来越流行。</p>
+<p>非关系型数据库(NoSQL)：Redis，MongoDB，Memecache。主要以Redis为主。</p>
+<p><strong>9.工具</strong></p>
+<p>IDE:eclipse/idea，idea是大势所趋，不过eclipse短期也难以被取代，工具而已，不必特别纠结。</p>
+<p>构建工具：以Maven为主，不过也可以学习一下Gradle。</p>
+<p>版本控制：集中式SVN和分布式Git，Git/Github需要深入学习，尤其是要把github当做宝库，多浏览多学习。</p>
+<p>持续集成：Jenkins。</p>
+<p><strong>10.方法论</strong></p>
+<p>软件设计原则。</p>
+<p>23种设计模式。</p>
+<p>详情参见：<a href="http://c.biancheng.net/design_pattern/" target="_blank" rel="noopener">http://c.biancheng.net/design_pattern/</a></p>
 
             </div>
             <hr>
@@ -669,7 +650,7 @@ public class Test(){
                     </span>
                     <a href="http://yoursite.com" class="b-link-green">MyBlog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/14/yi-wen-jiang-tou-chou-xiang-lei-he-jie-kou/" class="b-link-green">一文讲透抽象类和接口</a>
+                    <a href="/2019/06/15/java-ti-xi-er/" class="b-link-green">Java体系(二)</a>
                 </p>
             </div>
         </div>
@@ -691,7 +672,7 @@ public class Test(){
         repo: 'RuleWork.github.io',
         owner: 'RuleWork',
         admin: ["RuleWork"],
-        id: '2019-03-14T23-36-14',
+        id: '2019-06-15T19-20-31',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -714,24 +695,27 @@ public class Test(){
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/06/15/di-gui-he-wei-di-gui/">
+                <a href="/2019/06/15/java-ti-xi-er/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="递归和尾递归">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Java体系(二)">
                         
-                        <span class="card-title">递归和尾递归</span>
+                        <span class="card-title">Java体系(二)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">一.什么是尾递归在之前的的第一篇文章中深入的探讨了什么递归，并在文末引出了一种新的递归方式：尾递归。
-接下来我们先给出定义：如果一个函数中所有递归形式的调用都出现在函数的末尾，即当递归调用是整个函数体中最后执行的语句且它的返回值不属于表达式</div>
+                    <div class="summary">
+前言：本文主要说说Java的学习路线，学习途径，学习方法。
+
+一.学习路线我个人推荐最扎实的学法，就是不仅限于语言的学习，对计算机基础也要系统的学习，基础是内功，千万不能小觑，如果你想成为一名真正优秀的程序员，内功必须扎实，否则当出现瓶颈</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -740,11 +724,12 @@ public class Test(){
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/算法，数据结构/" target="_blank">
-                        <span class="chip bg-color">算法，数据结构</span>
+                    <a href="/tags/Java体系/" target="_blank">
+                        <span class="chip bg-color">Java体系</span>
                     </a>
                     
                 </div>
@@ -758,21 +743,21 @@ public class Test(){
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/03/13/yi-wen-jiang-tou-hashcode-he-equals-fang-fa/">
+                <a href="/2019/06/15/java-ti-xi-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="一文讲透hashCode和equals方法">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Java体系(一)">
                         
-                        <span class="card-title">一文讲透hashCode和equals方法</span>
+                        <span class="card-title">Java体系(一)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">本文主要回答一下几个问题，意在消除所有关于HashCode和equals方法的模糊地带，彻底掌握这个知识点，虽然HashCode和equals是Java中的基础概念但是包含的内容却一点也不少，所谓基础不牢，地动山摇，所以大家还是重视。
-0.</div>
+                    <div class="summary">
+前言：很长时间没写博客了，目前大三，通过这段时间的学习，对技术有了宏观上的视野，对Java的生态体系也有了较深的理解，所以停止了动笔主要是因为发觉之前自己的知识体系有很大的漏洞，IT所有技术的学习就好比数据库建索引的过程，如果没有清晰认知</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-13
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-15
                             </span>
                         <span class="publish-author">
                             
@@ -785,8 +770,8 @@ public class Test(){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java基础/" target="_blank">
-                        <span class="chip bg-color">Java基础</span>
+                    <a href="/tags/Java体系/" target="_blank">
+                        <span class="chip bg-color">Java体系</span>
                     </a>
                     
                 </div>

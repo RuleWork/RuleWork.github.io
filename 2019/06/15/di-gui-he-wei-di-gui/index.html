@@ -4,10 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="一文讲透抽象类和接口, Record">
-    <meta name="description" content="什么是抽象类和接口抽象类：简而言之，用abstract关键词修饰的类就是抽象类，抽象类不能创建实例对象，即不能new对象。
-接口：接口就是一种特殊的抽象类，接口中的所有方法都必须是抽象的且默认是public abstaract类型的。
-接口">
+    <meta name="keywords" content="递归和尾递归, Record">
+    <meta name="description" content="一.什么是尾递归在之前的的第一篇文章中深入的探讨了什么递归，并在文末引出了一种新的递归方式：尾递归。
+接下来我们先给出定义：如果一个函数中所有递归形式的调用都出现在函数的末尾，即当递归调用是整个函数体中最后执行的语句且它的返回值不属于表达式">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>一文讲透抽象类和接口 | MyBlog</title>
+    <title>递归和尾递归 | MyBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -282,13 +281,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        一文讲透抽象类和接口
+                        递归和尾递归
                     </div>
                 </div>
             </div>
@@ -401,8 +400,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java基础/" target="_blank">
-                                <span class="chip bg-color">Java基础</span>
+                            <a href="/tags/算法，数据结构/" target="_blank">
+                                <span class="chip bg-color">算法，数据结构</span>
                             </a>
                         
                     </div>
@@ -416,21 +415,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-14
+                    2019-06-15
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.1k
+                        1.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        5 分
                     </div>
                     
                 
@@ -446,90 +445,72 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="什么是抽象类和接口"><a href="#什么是抽象类和接口" class="headerlink" title="什么是抽象类和接口"></a>什么是抽象类和接口</h4><p>抽象类：简而言之，用abstract关键词修饰的类就是抽象类，抽象类不能创建实例对象，即不能new对象。</p>
-<p>接口：接口就是一种特殊的抽象类，接口中的所有方法都必须是抽象的且默认是public abstaract类型的。</p>
-<h4 id="接口的思想是什么"><a href="#接口的思想是什么" class="headerlink" title="接口的思想是什么"></a>接口的思想是什么</h4><p>Java为什么在有了抽象类还需要提出接口？</p>
-<p>因为抽象类依然没有摆脱类的概念，也就是说抽象类还必须由继承它的子类去实现抽象类中的抽象方法，本质上还是面向对象中的继承思想，而在现实世界中继承的关系虽然随处可见，但更多的思想是“对某种功能的实现“，比如客户提出我想要一个可以通信的工具，于是很多商家针对这种需求开发了对讲机，手机，固话等，可以明显的发现对讲机，手机，固话并不是对通信工具的继承，因为通信工具甚至没有一个具体的概念，也就是说它的抽象层次非常高，仅仅只是对”通信“这个功能的描述，而如果是传统的类就需要定义具体的属性，方法等。</p>
-<p>所以，继面向对象后Java提出了面向接口编程，接口只定义模块之间的通信契约，而抽象类在代码实现方面发挥了具体作用，两者的应用范围是不一样的。</p>
-<p>在jdk源码中随处可见的更多的是接口和抽象类，Java用接口的方式间接的实现了“多继承”，而声明接口创建实现类也是多态的一种体现。</p>
-<pre class=" language-Java"><code class="language-Java">public interface Signal{}
-public SignalImpl implements Signal{}
-public class Test(){
-    Signal signal = new SignalImpl();
+                <h2 id="一-什么是尾递归"><a href="#一-什么是尾递归" class="headerlink" title="一.什么是尾递归"></a>一.什么是尾递归</h2><p>在之前的的第一篇文章中深入的探讨了什么递归，并在文末引出了一种新的递归方式：<strong>尾递归</strong>。</p>
+<p>接下来我们先给出定义：<br>如果一个函数中所有递归形式的调用都出现在<strong>函数的末尾</strong>，即当递归调用是整个函数体中<strong>最后执行的语句</strong>且它的返回值<strong>不属于表达式的一部分</strong>时，这个递归调用就是尾递归。尾递归函数的特点是<strong>在回归过程中不用做任何操作</strong>，这个特性很重要，因为大多数现代的编译器会利用这种特点自动生成优化的代码。</p>
+<p>定义是很官方的，接下来我会用最通俗的语言说明什么尾递归。简单来说，<strong>尾递归就是把当前的运算结果（或路径）放在参数里传给下层函数。</strong></p>
+<h2 id="二-尾递归的原理"><a href="#二-尾递归的原理" class="headerlink" title="二.尾递归的原理"></a>二.尾递归的原理</h2><p>当编译器检测到一个函数调用是尾递归的时候，它就覆盖当前的活动记录而不是在栈中去创建一个新的。编译器可以做到这点，因为递归调用是当前活跃期内最后一条待执行的语句，于是当这个调用返回时栈帧中并没有其他事情可做，因此也就没有保存栈帧的必要了。通过覆盖当前的栈帧而不是在其之上重新添加一个，这样所使用的栈空间就大大缩减了，这使得实际的运行效率会变得更高。</p>
+<h2 id="三-递归与尾递归的区别"><a href="#三-递归与尾递归的区别" class="headerlink" title="三.递归与尾递归的区别"></a>三.递归与尾递归的区别</h2><p>我们先通过大家熟知的阶乘函数来举例：</p>
+<pre><code>int fact(int n) {
+    if (n &lt; 0)
+        return 0;
+    else if(n == 0 || n == 1)
+        return 1;
+    else
+        return n * fact(n - 1);
+}
+</code></pre><pre><code>int fact(int n, int result)
+{
+    if (n &lt; 0)
+        return 0;
+    else if (n == 0)
+        return 1;
+    else if (n == 1)
+        return result;
+    else
+        return fact(n - 1, n * result);
+}
+
+</code></pre><p>显然，代码一是一个普通的递归，代码二则是一个尾递归。我们观察两者的不同就会发现:<br>1.尾递归<strong>多加了一个参数result</strong>作为结果进行返回，我们调用时初始传入result=1.<br>2.尾递归在递归调用时并没有再出现n，而是直接调用了本函数，这也就是定义中说的<strong>返回值不属于某一表达式的一部分，而是仅仅只调用本函数。</strong></p>
+<h2 id="四-尾递归的特点"><a href="#四-尾递归的特点" class="headerlink" title="四.尾递归的特点"></a>四.尾递归的特点</h2><p>尾递归就是从最后开始计算, 每递归一次就算出相应的结果, 也就是说, 函数调用出现在调用者函数的尾部, 因为是尾部, 所以根本没有必要去保存任何局部变量. 直接让被调用的函数返回时越过调用者, 返回到调用者的调用者去.</p>
+<p>我们再来看一个更加清楚的例子，这个例子会完美的阐释尾递归的威力：</p>
+<pre><code>//普通的线性递归：
+long Rescuvie(long n) {
+    return (n == 1) ? 1 : n * Rescuvie(n - 1);
+}
+</code></pre><pre><code>//尾递归
+long TailRescuvie(long n, long result) {
+  return (n == 1) ? result : TailRescuvie(n - 1, result * n);
+}
+long TailRescuvie(long n) {//封装用的
+    return (n == 0) ? 1 : TailRescuvie(n, 1); 
+}
+</code></pre><p>这里我们可以看到在尾递归中写了两个函数，这里用到了函数的<strong>重载</strong>，<strong>即我们通过调用第二个函数从而再递归的调用第一个函数</strong>。</p>
+<p>接下类我们一步步的执行普通的线性递归和尾递归，观察两者的不同。</p>
+<p>当n = 5时<br>对于线性递归, 他的递归过程如下:<br>Rescuvie(5)<br>{5 <em> Rescuvie(4)}<br>{5 </em> {4 <em> Rescuvie(3)}}<br>{5 </em> {4 <em> {3 </em> Rescuvie(2)}}}<br>{5 <em> {4 </em> {3 <em> {2 </em> Rescuvie(1)}}}}<br>{5 <em> {4 </em> {3 <em> {2 </em> 1}}}}<br>{5 <em> {4 </em> {3 <em> 2}}}<br>{5 </em> {4 <em> 6}}<br>{5 </em> 24}<br>120</p>
+<p>对于尾递归, 他的递归过程如下:<br>TailRescuvie(5)<br>TailRescuvie(5, 1)<br>TailRescuvie(4, 5)<br>TailRescuvie(3, 20)<br>TailRescuvie(2, 60)<br>TailRescuvie(1, 120)<br>120</p>
+<p>这里我们便很容易看出, 普通的线性递归比尾递归更加消耗资源, 在实现上说, 每次重复的过程<br>调用都使得调用链条不断加长. 系统不得不使用栈进行数据保存和恢复.而尾递归就不存在这样的问题, 因为他的状态完全由n和result保存，且一直充当参数，所以栈每次只用保存后一个函数即可，因此我们可以形象的说尾递归就是<strong>不压栈的递归</strong>。</p>
+<h2 id="五-尾递归的作用及其重要性"><a href="#五-尾递归的作用及其重要性" class="headerlink" title="五.尾递归的作用及其重要性"></a>五.尾递归的作用及其重要性</h2><p>显然尾递归是极其重要的，不用尾递归，函数的堆栈耗用难以估量，需要保存很多中间函数的堆栈。比如sum(n) = f(n) = f(n-1) + value(n) ;会保存n个函数调用堆栈，而使用尾递归f(n, sum) = f(n-1, sum+value(n)); 这样则只保留一个函数堆栈即可，之前的可优化删去。</p>
+<p>而尾递归的用途一般会在erlang这个语言中发挥的淋漓尽致，因为erlang是一种函数式编程语言，erlang中没有循环，只能通过递归和列表解析来实现循环的功能。但众所周知递归典型的代码简洁但效率极低的，所以通过尾递归来对递归进行优化就显然锦上添花了。</p>
+<h2 id="六-一个用例"><a href="#六-一个用例" class="headerlink" title="六.一个用例"></a>六.一个用例</h2><p>在前一篇文章中我们用python实现了快速排序，那么我们最后在用C语言和尾递归来实现一下快速排序</p>
+<pre><code>void quickSort(SqList * list , int low ,int high)
+{
+     int pivot;
+     while(low&lt;high)
+    {
+        pivot=Partition(list,low,high);
+
+        quickSort(list, low,pivot - 1);
+
+        //quickSort(list,low,pivot-1); /*原递归调用需要两行代码*/
+
+        //quickSort(list,pivot+1,high);
+
+        low = pivot+1; /*尾递归*/
+
+    }
+
 }
 </code></pre>
-<h4 id="深入两者的各种区别"><a href="#深入两者的各种区别" class="headerlink" title="深入两者的各种区别"></a>深入两者的各种区别</h4><p>1.抽象类可以有构造方法，接口中不能有。</p>
-<p>2.抽象类中可以有普通成员变量，接口中不能有。</p>
-<p>3.抽象类可以包含非抽象的普通方法，接口在jdk中也可以，但必须用default修饰方法。</p>
-<pre class=" language-Java"><code class="language-Java">public interface Test {
-        default int sum(int i,int j) {
-        return i * j;
-    }
-}
-</code></pre>
-<p>但不推荐这么做，应该尽可能的写成</p>
-<pre><code>public interface Test {
-        int sum(int i,int j);        
-    }
-}
-</code></pre><p>以供实现类去实现这个方法。</p>
-<p>4.抽象类中的抽象方法的访问类型可以是public,protected,默认，但静态抽象方法不能是默认的，而接口默认即为public abstract。</p>
-<p>5.抽象类中可以包含静态方法，但接口中不能包含静态方法。</p>
-<p>6.抽象类和接口中都可以包含静态成员变量，抽象类中静态成员变量访问类型可以任意，但接口中定义的成员变量只能是public static final类型，并且默认如此。</p>
-<p>7.一个类可以实现多个接口，但只能继承一个抽象类。</p>
-<h4 id="一个抽象类的经典应用"><a href="#一个抽象类的经典应用" class="headerlink" title="一个抽象类的经典应用"></a>一个抽象类的经典应用</h4><p>模板方法设计模式是抽象类的一个典型应用，假设某个项目中所有的Servlet类都要 用相同的方式进行权限判断，记录访问日志，异常处理，那么就可以定义一个抽象的基类，在抽象基类的service方法中完成所有的逻辑。</p>
-<p>例如：</p>
-<blockquote>
-<p>localhost:8080/store/productServlet?method=addProduct</p>
-</blockquote>
-<p>我们可以在访问productServlet传入一个方法addProduct，定义一个BaseServlet继承自HttpServlet抽象类。</p>
-<p>采用底层字节码技术就可以实现通用的逻辑设计</p>
-<pre class=" language-Java"><code class="language-Java">public class abstract BaseServlet extends HttpServlet {
-    @Override
-    public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        // localhost:8080/store/ProductServlet?method=findProductByPid&pid=1
-        String method = req.getParameter("method");
-
-        if (null == method || "".equals(method) || method.trim().equals("")) {
-            method = "execute";
-        }
-
-        Class clazz = this.getClass();
-        try {
-            Method md = clazz.getMethod(method, HttpServletRequest.class, HttpServletResponse.class);
-            if(null!=md){
-                String jspPath = (String)md.invoke(this, req, resp);
-                if (null != jspPath) {
-                    req.getRequestDispatcher(jspPath).forward(req, resp);
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    // 默认方法
-    public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        return null;
-    }
-</code></pre>
-<pre class=" language-Java"><code class="language-Java">public class ProductServlet extends BaseServlet {
-    public String findProductByPid(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        //获取商品pid
-        String pid = req.getParameter("pid");
-        //根据商品pid查询商品信息
-        IProductService prodectService = new ProductServiceImpl();
-        Product product = prodectService.findByProductByPid(pid);
-        //将获取到的商品放入request
-        req.setAttribute("product", product);
-        //转发/jsp/product_info.jsp
-        return "/jsp/product_info.jsp";
-    }
-}
-</code></pre>
-<p>如此一来就不用直接继承自HttpServletRequest写大量的doGet,doPost方法,看起来就立马清爽了许多。</p>
-
             </div>
             <hr>
 
@@ -669,7 +650,7 @@ public class Test(){
                     </span>
                     <a href="http://yoursite.com" class="b-link-green">MyBlog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/14/yi-wen-jiang-tou-chou-xiang-lei-he-jie-kou/" class="b-link-green">一文讲透抽象类和接口</a>
+                    <a href="/2019/06/15/di-gui-he-wei-di-gui/" class="b-link-green">递归和尾递归</a>
                 </p>
             </div>
         </div>
@@ -691,7 +672,7 @@ public class Test(){
         repo: 'RuleWork.github.io',
         owner: 'RuleWork',
         admin: ["RuleWork"],
-        id: '2019-03-14T23-36-14',
+        id: '2019-06-15T18-59-19',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -716,18 +697,18 @@ public class Test(){
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/06/15/di-gui-he-wei-di-gui/">
+                <a href="/2019/06/15/java-ti-xi-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="递归和尾递归">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Java体系(一)">
                         
-                        <span class="card-title">递归和尾递归</span>
+                        <span class="card-title">Java体系(一)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">一.什么是尾递归在之前的的第一篇文章中深入的探讨了什么递归，并在文末引出了一种新的递归方式：尾递归。
-接下来我们先给出定义：如果一个函数中所有递归形式的调用都出现在函数的末尾，即当递归调用是整个函数体中最后执行的语句且它的返回值不属于表达式</div>
+                    <div class="summary">
+前言：很长时间没写博客了，目前大三，通过这段时间的学习，对技术有了宏观上的视野，对Java的生态体系也有了较深的理解，所以停止了动笔主要是因为发觉之前自己的知识体系有很大的漏洞，IT所有技术的学习就好比数据库建索引的过程，如果没有清晰认知</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-15
@@ -743,8 +724,8 @@ public class Test(){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/算法，数据结构/" target="_blank">
-                        <span class="chip bg-color">算法，数据结构</span>
+                    <a href="/tags/Java体系/" target="_blank">
+                        <span class="chip bg-color">Java体系</span>
                     </a>
                     
                 </div>
@@ -758,21 +739,22 @@ public class Test(){
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/03/13/yi-wen-jiang-tou-hashcode-he-equals-fang-fa/">
+                <a href="/2019/03/14/yi-wen-jiang-tou-chou-xiang-lei-he-jie-kou/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="一文讲透hashCode和equals方法">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="一文讲透抽象类和接口">
                         
-                        <span class="card-title">一文讲透hashCode和equals方法</span>
+                        <span class="card-title">一文讲透抽象类和接口</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">本文主要回答一下几个问题，意在消除所有关于HashCode和equals方法的模糊地带，彻底掌握这个知识点，虽然HashCode和equals是Java中的基础概念但是包含的内容却一点也不少，所谓基础不牢，地动山摇，所以大家还是重视。
-0.</div>
+                    <div class="summary">什么是抽象类和接口抽象类：简而言之，用abstract关键词修饰的类就是抽象类，抽象类不能创建实例对象，即不能new对象。
+接口：接口就是一种特殊的抽象类，接口中的所有方法都必须是抽象的且默认是public abstaract类型的。
+接口</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-13
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-14
                             </span>
                         <span class="publish-author">
                             
